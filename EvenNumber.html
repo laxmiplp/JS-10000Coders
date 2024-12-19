@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Even or Odd Number</title>
+</head>
+
+<body>
+    <script>
+        let num1 = prompt('Enter Even Number')
+        if (num1 % 2 == 0) {
+            alert(num1 + " " + "is Even Number")
+            fun()
+        }
+
+        else {
+            alert(num1 + " " + " is not an Even Number")
+            fun()
+        }
+        function fun() {
+            let num2 = prompt('Enter Odd Number')
+            if (num2 % 2 !== 0) {
+                alert(num2 + " " + "is Odd Number")
+            } else {
+                alert(num2 + " " + "is not a Odd Number")
+            }
+        }
+
+    </script>
+</body>
+
+</html>
