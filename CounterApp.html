@@ -1,0 +1,47 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter App</title>
+
+</head>
+
+<body>
+    <div style="border: 1px solid black; border-radius: 5px; padding: 20px; width: 200px; margin: auto;">
+        <h1 style=" text-align: center; margin-top: 0px;">Counter App</h1>
+        <div style="display: flex;gap: 10px;justify-content: center;">
+            <button type="button" onclick="countAppIncrement()"
+                style="width: 50px;height: 50px;cursor: pointer;">+</button>
+            <p style="background-color: antiquewhite;border: 1px solid black; width: 50px;height: 50px;display: flex;justify-content: center;align-items: center;margin: 0;"
+                id="value">0</p>
+            <button type="button" onclick="countAppDecrement()"
+                style="width: 50px;height: 50px;cursor: pointer;">-</button>
+        </div>
+        <div style="text-align: center; margin-top: 20px;">
+            <button type="button" onclick="countReset()"
+                style="width: 100px;height: 40px;cursor: pointer;">Reset</button>
+        </div>
+    </div>
+    <script>
+        let counter = 0
+        function countAppIncrement() {
+            counter++
+            document.getElementById('value').textContent = counter
+
+        }
+        function countReset() {
+            counter = 0
+
+            document.getElementById('value').textContent = counter
+
+        }
+        function countAppDecrement() {
+            counter--
+            document.getElementById('value').textContent = counter
+
+        }
+    </script>
+</body>
+
+</html>
