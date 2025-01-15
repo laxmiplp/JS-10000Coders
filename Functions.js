@@ -184,5 +184,20 @@ function _10000coders() {
         console.log("10k coders")
     }
 }
-console.log(_10000coders())
+// console.log(_10000coders())
 
+let op = (_10000coders())
+console.log(op())
+
+function recall(x) {
+
+    console.log(x.length)
+}
+recall([1, 2, 3, 4, 5, 6])
+recall(["A", "B", "c"])
+function cable(user, stream = "live tv") {
+    console.log(`${user} is watching ${stream}`)
+}
+cable('srikanth')
+cable('Karthik', 'Prime')
+console.log("**************************************")

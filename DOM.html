@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM File</title>
+
+
+
+</head>
+
+<body>
+    <p id="p1">Laxmi</p>
+    <p id="p2">Prasanna</p>
+    <p id="p3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus iure nihil est commodi rerum,
+        facilis iste,
+        nam deleniti dolorum ad sed et ducimus, qui eveniet maxime. Enim necessitatibus molestias soluta?</p>
+    <h1 id="p4" class="heading">Heading1</h1>
+    <p id="p5" class="heading">Paragraph5</p>
+    <h3 id="p6" class="heading">Heading2</h3>
+    <button onclick="contentChange()">Click here</button>
+    <button onclick="styleChange()">Click here also</button>
+    <div>
+
+        <ul>
+            <li id="li1">List1</li>
+            <li id="li2" onclick="listStyle()" style="cursor: pointer;">List2</li>
+            <li id="li3">List3</li>
+            <li id="li4">List4</li>
+
+        </ul>
+    </div>
+    <button onclick="listStyle()">Click here to visible the list</button>
+    <button onclick="addImg()">Click here to visible the Image</button>
+    <form onsubmit="handleSubmit(event)"><input id='input1' type="text" />
+        <input id='inputBtn' type="submit" style="cursor: pointer;" />
+    </form>
+    <p id="showText"></p>
+    <script>
+        let x1 = document.getElementById('p1')
+        let x2 = document.getElementsByClassName('heading')
+        let x3 = document.getElementsByTagName('p', 'h1')
+        // console.log(x1)
+        // console.log(x2)
+        // console.log(x3)
+
+        // console.log(x2[2])
+        // x1.innerHTML = "Sri"
+        // x1.innerHTML = "<b>Sri</b>"
+        x1.innerText = "<b>10k coders</b>"
+        // x1.innerText = "10k coders"
+        p3.innerText = "Hello"
+        p3.innerText = "<u>Hello</u>"
+
+        p3.innerHTML = "<u>Haiiiiiii</u>"
+
+        console.log(x2[2].textContent)
+        let a = document.getElementById('p1')
+        // var a = document.getElementById('p1')
+
+        function contentChange() {
+            // let a = document.getElementById('p1')
+            a.innerText = "Pillalamarri"
+        }
+        function styleChange() {
+            // let b = document.getElementById('p1')
+            a.style.color = 'red'
+        }
+        function listStyle() {
+            // let doc1 = document.getElementById('li3')
+            // doc1.style.border = '2px solid red'
+            // doc1.style.backgroundColor = 'red'
+            // doc1.style.color = 'white'
+            // doc1.style.borderRadius = '3PX'
+            // doc1.style.padding = '5px'
+            let doc2 = document.createElement("div")
+            document.body.append(doc2, 'Hi', 'Hello')
+            doc2.style.marginTop = '20px'
+
+            let doc3 = document.createElement('p')
+            doc3.style.margin = '0px'
+            document.body.append(doc3, 'Telangana')// can add multiple elements
+            let doc4 = document.createComment('div')
+            document.body.appendChild(doc3)//can add only single element
+            doc3.style.border = '2px solid red'
+
+
+        }
+        // function addImg() {
+        //     let addDiv = document.createElement('div')
+        //     addDiv.style.border = '2px solid black'
+        //     document.body.append(addDiv)
+        //     let doc5 = document.createElement('img')
+        //     doc5.setAttribute('src', 'nature.jpg')
+        //     doc5.style.width = '100%'
+        //     doc5.style.height = '200%'
+        //     let addTitle = document.createElement('p')
+        //     addTitle.innerHTML = 'WEATHER'
+        //     addTitle.append('title')
+        //     addTitle.style.color = 'black'
+
+        // }
+        function addImg() {
+            // Create a new div with a border
+            let addDiv = document.createElement('div');
+            addDiv.style.border = '2px solid black';
+
+            // Create a new img element
+            let imgElement = document.createElement('img');
+            imgElement.setAttribute('src', 'nature.jpg');
+            imgElement.style.width = '100%'
+            imgElement.style.height = '100%'
+
+            // Append the image to the div
+            addDiv.appendChild(imgElement);
+
+            // Append the div to the document body
+            document.body.appendChild(addDiv);
+            addDiv.append(title);
+            addDiv.innerText = "Nature image"
+
+        }
+        // let inputText = document.getElementById('input1')
+        // let b = document.getElementById('showText')
+
+        function handleSubmit(event) {
+            let inputText = document.getElementById('input1')
+            let b = document.getElementById('showText')
+            event.preventDefault()
+            console.log(inputText.value)
+            b.innerHTML = inputText.value
+            inputText.value = ''
+            console.log(b.input1)
+
+        }
+    </script>
+</body>
+
+</html>
