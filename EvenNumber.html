@@ -8,6 +8,7 @@
 </head>
 
 <body>
+
     <script>
         let num1 = prompt('Enter Even Number')
         if (num1 % 2 == 0) {
@@ -27,6 +28,37 @@
                 alert(num2 + " " + "is not a Odd Number")
             }
         }
+        function evenNumber() {
+            let a = prompt('Enter the Even Number')
+            let i = a
+            let b = 0
+            for (i = 0; i <= 10; i++) {
+                if (i % 2 == 0) {
+                    document.write(`Even Number for 10: ${i}`)
+
+                }
+
+
+            }
+            for (i = 0; i <= 7; i++) {
+                if (i % 2 == 0) {
+                    document.write(`Even Number for 7: ${i}`)
+                }
+
+
+            }
+            if (b > -1) {
+                document.write(`Even Number for 5: Please enter a Non Negative Number`)
+            }
+
+
+
+        }
+        evenNumber()
+
+
+
+
 
     </script>
 </body>

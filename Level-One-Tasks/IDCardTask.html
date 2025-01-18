@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ID CARD Task</title>
+</head>
+
+<body>
+    <form onsubmit="handleSubmit(event)">
+        <input id="input1" type="text" placeholder="Enter the Employee Name" required />
+        <input id="input2" type="submit" value="Submit" style="cursor: pointer;" />
+    </form>
+
+    <script>
+        function handleSubmit(event) {
+            event.preventDefault();
+            const enteredText = document.getElementById('input1').value;
+
+            if (enteredText === 'Laxmi') {
+                handleID(enteredText);
+            } else {
+                alert('Only Named with "Laxmi" ID Card is allowed to display.');
+            }
+
+            document.getElementById('input1').value = '';
+        }
+
+        function handleID(name) {
+            let xyz = document.createElement('div');
+            xyz.style.width = '400px';
+            xyz.style.backgroundColor = 'bisque';
+            xyz.style.border = '1px solid black';
+            xyz.style.borderRadius = '10px';
+            xyz.style.padding = '10px';
+            xyz.style.marginTop = '20px';
+            xyz.style.display = 'flex';
+            xyz.style.flexDirection = 'row';
+            xyz.style.justifyContent = 'space-between';
+
+            let idImgDiv = document.createElement('div');
+            idImgDiv.style.width = '50%';
+
+            let idImg = document.createElement('img');
+            idImg.setAttribute('src', 'https://img.freepik.com/free-photo/portrait-beautiful-young-brunette-cafe_1153-6678.jpg?semt=ais_hybrid');
+            idImg.style.width = '100%';
+            idImg.style.height = '100%';
+            idImg.style.borderRadius = '10px';
+
+            idImgDiv.appendChild(idImg);
+            xyz.appendChild(idImgDiv);
+
+            let profile = document.createElement('div');
+            profile.style.maxWidth = '50%';
+            profile.style.width = '100%';
+            profile.style.height = '100%';
+            profile.style.paddingLeft = '20px';
+
+            let heading = document.createElement('h3');
+            heading.innerHTML = '<u>Company ID Card</u>';
+
+            let ID = document.createElement('p');
+            ID.innerHTML = '<b>ID:</b> 101';
+
+            let empName = document.createElement('p');
+            empName.innerHTML = `<b>Name:</b> ${name}`;
+
+            let dept = document.createElement('p');
+            dept.innerHTML = '<b>Department:</b> Software';
+
+            let bloodgrp = document.createElement('span');
+            bloodgrp.innerHTML = '<b>Bloodgroup:</b> B +ve';
+
+            let company = document.createElement('p');
+            company.innerHTML = '<b>Company:</b> 10k Coders';
+
+            let city = document.createElement('p');
+            city.innerHTML = '<b>City:</b> Hyderabad';
+
+            profile.append(heading, ID, empName, dept, bloodgrp, company, city);
+            xyz.appendChild(profile);
+
+            document.body.appendChild(xyz);
+        }
+    </script>
+</body>
+
+</html>
