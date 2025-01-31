@@ -8,26 +8,43 @@
 </head>
 
 <body>
-    <div style="display: flex;flex-direction: column;justify-content: center;align-items: center;height: 70vh;">
-        <button id="otpBtn" type="button" onclick="otpGenerator()" style="cursor: pointer; border-radius: 50px;padding: 10px 15px;
-    font-weight: bold; text-transform: uppercase;letter-spacing: 2.5px;">Generate
-            OTP</button>
-        <h1 id="text"></h1>
-    </div>
     <script>
         function otpGenerator() {
-            let a = Math.random() * 1000000
-            let otp = Math.floor(a)
-            let color
-            if (a < 100000) {
-                color = otp + 100000
-            } else {
-                color = otp
+            let addMainBlock = document.createElement('div')
+            addMainBlock.style.display = 'flex'
+            addMainBlock.style.flexDirection = 'column'
+            addMainBlock.style.justifyContent = 'center'
+            addMainBlock.style.alignItems = 'center'
+            addMainBlock.style.height = '75vh'
+            let addBtn = document.createElement('button')
+            addBtn.textContent = 'Generate Otp'
+            addBtn.style.borderRadius = '50px'
+            addBtn.style.padding = '10px 15px'
+            addBtn.style.cursor = 'pointer'
+            addBtn.style.letterSpacing = '2.5px'
+            addBtn.style.textTransform = 'uppercase'
+            addBtn.style.fontWeight = 'bold'
+            let displayText = document.createElement('h1')
+            displayText.id = 'text'
+            addMainBlock.append(addBtn, displayText)
+            addBtn.addEventListener('click', () => {
+                let a = Math.random() * 1000000
+                let otp = Math.floor(a)
+                let color
+                if (a < 100000) {
+                    color = otp + 100000
+                } else {
+                    color = otp
+                }
+                document.body.style.backgroundColor = `#${color}`
+                let otp_gen = document.getElementById('text')
+                otp_gen.innerHTML = color
+                displayText.textContent = `${otp}`
             }
-            document.body.style.backgroundColor = `#${color}`
-            let otp_gen = document.getElementById('text')
-            otp_gen.innerHTML = color
+            )
+            document.body.append(addMainBlock)
         }
+        otpGenerator()
     </script>
 </body>
 
