@@ -36,16 +36,16 @@ console.log('******************************************')
 // Output: "Hello, John!"
 // Input: "Emma" (entered via prompt)
 //  Output: "Hello, Emma!"
-function greetUser(username1, username2) {
-    username1 = prompt('Enter the name to Greet.')
-    let print1 = alert(`Hello ${username1}, Good Morning! Have a Nice Day with a Great Coffee.`)
-    console.log(print1)
-    username2 = prompt('Enter the name to Welcome.')
-    let print2 = alert(`Hello ${username2}, Please Welcome to the Home.`)
-    console.log(print2)
+// function greetUser(username1, username2) {
+//     username1 = prompt('Enter the name to Greet.')
+//     let print1 = alert(`Hello ${username1}, Good Morning! Have a Nice Day with a Great Coffee.`)
+//     console.log(print1)
+//     username2 = prompt('Enter the name to Welcome.')
+//     let print2 = alert(`Hello ${username2}, Please Welcome to the Home.`)
+//     console.log(print2)
 
-}
-greetUser()
+// }
+// greetUser()
 
 
 console.log('******************************************')

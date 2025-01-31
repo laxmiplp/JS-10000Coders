@@ -175,3 +175,9 @@ function splitTask() {
 }
 splitTask()
 console.log('******************')
+let matchEx = 'Hello Welcome Home'
+let matchStore = matchEx.match('H')
+console.log(matchStore)
+let inc = 'India'
+let inc2 = inc.includes('N')
+console.log(inc2)
