@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events Task File</title>
+</head>
+
+<body>
+    <h1 id='text'></h1>
+    <form id="myForm">
+        <input type="text" id="inputText" />
+        <input type="submit" style="cursor: pointer;" />
+    </form>
+    <h2 id="formText"></h2>
+    <script>
+        function EventsTask() {
+            let x = document.getElementById('myForm')
+            let y = document.getElementById('formText')
+            x.addEventListener('submit', function (e) {
+                e.preventDefault()
+                let inputField = document.getElementById('inputText')
+                let evenNum = inputField.value.trim()
+
+                if (evenNum !== '' && !isNaN(evenNum)) {
+                    let number = parseInt(evenNum, 10);
+
+                    if (number % 2 === 0) {
+                        y.innerHTML = `${number} is an Even Number`
+                        y.style.color = 'black'
+
+                    } else {
+                        y.innerHTML = `${number} is an odd Number`
+                        y.style.color = 'blue'
+
+                    }
+
+                } else if (evenNum == '') {
+                    y.innerHTML = `Entered input value is Empty. It should be in Number.`
+                    y.style.color = 'green'
+
+                } else {
+                    y.innerHTML = `Entered input value is String. It should be in Number.`
+                    y.style.color = 'red'
+
+                }
+            })
+
+        }
+        EventsTask()
+
+    </script>
+</body>
+
+</html>

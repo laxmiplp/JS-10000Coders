@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events File</title>
+</head>
+
+<body>
+    <button id="btnClick">Click Here</button>
+    <h1 id='text'></h1>
+    <form id="myForm">
+        <input type="text" />
+        <input type="text" />
+        <input type="text" />
+        <input type="text" />
+        <input type="submit" />
+    </form>
+    <h2 id="formText"></h2>
+    <script>
+        function Events() {
+
+            let x = document.getElementById('btnClick')
+            x.addEventListener('click', function () {
+                x.style.backgroundColor = 'red'
+            })
+            x.addEventListener('mouseover', function () {
+                x.style.color = 'yellow'
+            })
+            x.addEventListener('mouseleave', function () {
+                x.style.backgroundColor = 'white'
+            })
+            x.addEventListener('dblclick', function () {
+                text.innerHTML = 'double clicked'
+            })
+
+        }
+        Events()
+        function formEvents() {
+            let a = document.getElementById('myForm')
+            let b = document.getElementById('formText')
+            a.addEventListener('submit', function (e) {
+                e.preventDefault()
+                b.innerHTML = `${e.target[0].value},${e.target[1].value},${e.target[2].value},${e.target[3].value}`
+                // b.innerHTML = 'Form Submitted'
+                // console.log(`${e.target[0].value},${e.target[1].value},${e.target[2].value},${e.target[3].value}`)
+
+            })
+        }
+        formEvents() 
+    </script>
+</body>
+
+</html>
