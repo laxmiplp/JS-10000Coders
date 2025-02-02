@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator Task</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class='mainContainer'>
+        <h1 class="heading">CALCULATOR APPLICATION</h1>
+
+        <div class='calculator'>
+
+            <input id="display" type="text" />
+
+            <hr>
+            <div style="text-align: center;">
+
+                <div class="btnContainer">
+                    <div class="btn"> <button value='1' onclick="calc(event)">1</button>
+                    </div>
+                    <div class="btn"> <button value='2' onclick="calc(event)">2</button>
+                    </div>
+                    <div class="btn">
+                        <button value='3' onclick="calc(event)">3</button>
+                    </div>
+                    <div class="btn">
+                        <button value='*' class="specialChar" onclick="calc(event)">*</button>
+                    </div>
+                    <div class="btn">
+                        <button value='DEL' class="specialChar" onclick="del(event)">DEL</button>
+                    </div>
+                </div>
+                <div class="btnContainer">
+                    <div class="btn">
+
+                        <button value='4' onclick="calc(event)">4</button>
+                    </div>
+                    <div class="btn">
+
+                        <button value='5' onclick="calc(event)">5</button>
+                    </div>
+                    <div class="btn">
+
+                        <button value='6' onclick="calc(event)">6</button>
+                    </div>
+                    <div class="btn">
+
+                        <button value='/' class="specialChar" onclick="calc(event)">/</button>
+                    </div>
+                    <div class="btn">
+
+                        <button value='AC' class="specialChar" onclick="allClear(event)">AC</button>
+                    </div>
+                </div>
+                <div class="btnContainer">
+                    <div class="btn">
+
+                        <button value='7' onclick="calc(event)">7</button>
+                    </div>
+                    <div class="btn">
+
+                        <button value='8' onclick="calc(event)">8</button>
+                    </div>
+                    <div class="btn">
+
+                        <button value='9' onclick="calc(event)">9</button>
+                    </div>
+                    <div class="btn">
+
+                        <button value='%' class="specialChar" onclick="calc(event)">%</button>
+                    </div>
+                    <div class="btn">
+
+                        <button value='=' class="specialChar" onClick="myEval()">=</button>
+                    </div>
+
+                </div>
+                <div class="btnContainer">
+                    <div class="btn">
+
+                        <button value='0' onclick="calc(event)">0</button>
+                    </div>
+                    <div class="btn">
+                        <button value='+' onclick="calc(event)">+</button>
+                    </div>
+                    <div class="btn">
+                        <button value='-' onclick="calc(event)">-</button>
+                    </div>
+                    <div class="btn">
+                        <button value='.' class="specialChar" onclick="calc(event)">.</button>
+                    </div>
+                    <div class="btn">
+                        <button value='00' onclick="calc(event)">00</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let x = document.getElementById('display')
+        const calc = (event) => {
+            x.value = x.value + event.target.value
+
+        }
+        const myEval = () => {
+            x.value = eval(x.value)
+
+        }
+        const del = (event) => {
+            x.value = x.value.slice(0, -1)
+        }
+        const allClear = (event) => {
+            x.value = ''
+        }
+
+
+    </script>
+</body>
+
+</html>
