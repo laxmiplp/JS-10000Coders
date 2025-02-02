@@ -87,6 +87,10 @@ button:hover {
     color: white;
 }
 
+.error {
+    color: red;
+}
+
 @media screen and (max-width: 539px) {
     .btn {
         width: 50px;

@@ -104,12 +104,32 @@
     <script>
         let x = document.getElementById('display')
         const calc = (event) => {
-            x.value = x.value + event.target.value
+            let lastChar = x.value.slice(-1);
+            let currentValue = event.target.value;
 
+            if (/[\+\-\*\/]/.test(lastChar) && /[\+\-\*\/]/.test(currentValue)) {
+                return;
+            }
+
+            if (x.value === "" && /[\+\*\/]/.test(currentValue)) {
+                return;
+            }
+
+            x.value = x.value + currentValue;
         }
-        const myEval = () => {
-            x.value = eval(x.value)
 
+        const myEval = () => {
+            try {
+                let result = eval(x.value);
+                if (result === Infinity || result === -Infinity) {
+                    x.value = "Error";
+
+                } else {
+                    x.value = result;
+                }
+            } catch (error) {
+                x.value = "Error";
+            }
         }
         const del = (event) => {
             x.value = x.value.slice(0, -1)
